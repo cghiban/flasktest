@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" action="{%if form.id.data > 0 %}/edit/{{form.id.data}}{% else %}/add{% endif %}">
+	{{ form.csrf_token }}
+	{{ form.id }}
+	<div>{{ form.name.label }} {{ form.name(size=20) }} {{ ",".join(form.name.errors) }}</div>
+	<div>{{ form.population.label }} {{ form.population(size=7) }} {{ ",".join(form.population.errors) }}</div>
+	<div>{{ form.altitude.label }} {{ form.altitude(size=5) }} {{ ",".join(form.altitude.errors) }}</div>
+    <input type="submit" value="Go">
+</form>
+{% endblock %}

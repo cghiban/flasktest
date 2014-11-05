@@ -1,0 +1,8 @@
+{% extends "base.html" %}
+{% block content %}
+	<a href="/add">add city</a>
+	<h2>Our cities</h2>
+	{% for c in cities %}
+		<div>{{ c.name }}</div>
+	{% endfor %}
+{% endblock %}
